@@ -17,8 +17,8 @@ def addData():
         return jsonify({"status":"error","message":"please provide the data"},400)
     contact={
         "id":contacts[-1]["id"]+1,
-        "Contact":"1234567890",
-        "Name":"Raju",
+        "Name":request.json['Name'],
+        "Contact":request.json.get("Contact",''),
         "done":False,
     }
     contacts.append(contact)
